@@ -21,9 +21,10 @@ class Helper
         return $protocol . "://" . $_SERVER['HTTP_HOST'];
     }
 
-    public static function renderCatalog($featureProducts, $title, $categoryId){
+    public static function renderCatalog($featureProducts, $title = 0, $categoryId=0, $route123 = ''){
+   
         $resultString = '';
-        if(count($featureProducts) >3 ){
+   
             $resultString = '<div class="featured-product product"  >
             <div class="container-fluid">
                 <div class="section-header">
@@ -35,13 +36,21 @@ class Helper
                     foreach ($featureProducts as $item)  {    
                         $resultString.='<div class="col-lg-3">
                         <div class="product-item">';
+                        if($item->type == 2 && $route123 != 'home' ){
+                            $resultString.= '<div class="label-sales ">Xả</div>';
+                        }
+                       
+                               
                             if($item->price_old) {
                                 $price = (int)$item->price;
                                 $priceOld = (int)$item->price_old;
                                 $result =  100 - $price*100 / $priceOld;
+                                $resultString.='<div class="label-top ">- '.round($result).'%</div>';
+                            }
                                 
-                                $resultString.= '<div class="label-top ">- '.round($result).'%</div>';
-                                }
+                                
+                                
+                                
                                 $resultString.=' <div class="product-image">
                                 <a href="'.Helper::getBaseUrl().'/chi-tiet-san-pham-'.$item->productID.'">
                                     <img class="img-lea"'
@@ -93,13 +102,13 @@ class Helper
                                     }
                                     $resultString.='  </div>';
                                     if($title == 'Tất cả sản phẩm'){
-                                        $resultString.= $featureProducts->links();
+                                        $resultString.= $featureProducts->links(("pagination::bootstrap-4"));
                                         
                                     }
                                     $resultString.= '</div>
                                     
                 </div>';
-            }
+            
         
             return  $resultString;
     }

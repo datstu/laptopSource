@@ -4,7 +4,7 @@
             <div class="row ">
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget">
-                        <h2>Địa chỉ của Nga Thinkpad</h2>
+                        <h2>Địa chỉ cửa hàng</h2>
                         <div class="contact-info">
                             <p><i class="fa fa-map-marker"></i> 56B Trần Quốc Thảo <br> Phường 4, Quận 3, Tp. Hồ Chí Minh</p>
                             <p><i class="fa fa-envelope"></i>nguyenhongnga256153@gmail.com</p>
@@ -15,11 +15,11 @@
                 
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget">
-                        <h2 class="font_Lea">Follow Nga Thinkpad Page </h2>
+                        <h2 class="font_Lea">Follow Nga Thinkpad </h2>
                         <div class="contact-info">
                             <div class="social">
                                 <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.facebook.com/ngathinkpad/"><i class="fab fa-facebook-f"></i></a>
+                                <a target="_blank" href="https://www.facebook.com/ngathinkpad/"><i class="fab fa-facebook-f"></i></a>
                                 <a href=""><i class="fab fa-linkedin-in"></i></a>
                                 <a href=""><i class="fab fa-instagram"></i></a>
                                 <a href=""><i class="fab fa-youtube"></i></a>
@@ -231,7 +231,7 @@
 <div id="fb-customer-chat" class="fb-customerchat">
 </div>
 
-<script>
+<!-- <script>
   var chatbox = document.getElementById('fb-customer-chat');
   chatbox.setAttribute("page_id", "108835094783066");
   chatbox.setAttribute("attribution", "biz_inbox");
@@ -250,6 +250,6 @@
     js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
-</script>
+</script> -->
 </body>
 </html>

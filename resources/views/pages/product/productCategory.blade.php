@@ -156,13 +156,13 @@
       
         <!-- category end -->
         <!-- Product -->
-        @if(count($productCategory) >3 )
+
         <div class="featured-product product"  >
             <div class="container-fluid">
                 <div class="section-header" style="color: #000">
-                    @if($category->category_id == 999) 
+                    @if(isset($category->category_id)) 
                     <h3 style="display:inline-block"> Sản phẩm: {{$category->category_name}}</h3>
-                    @else<h3 style="display:inline-block">Sản phẩm: {{$category->category_name}}  </h3>
+                    @else  <h3 style="display:inline-block"> Sản phẩm: Hàng xả kho || Giảm giá</h3>
                     @endif
                     <span> ({{($productCategory->total()) }} Sản phẩm)</span>
                 </div>
@@ -214,7 +214,7 @@
    
         </div>
 
-        @endif
+
         <!-- Product END -->
         
     </div>

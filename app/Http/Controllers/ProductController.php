@@ -68,7 +68,7 @@ class ProductController extends Controller
     public function allProduct(Request $req)
     {
         
-        $featureProducts = Product::orderby('productID','DESC')->paginate(30);
+        $featureProducts = Product::where('status',1)->orderby('productID','DESC')->paginate(30);
         //dd($featureProducts);
        // $meidcanProducts = Product::join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.catID')
        // ->where('tbl_product.catID',27)->orderby('productID','DESC')
@@ -99,13 +99,13 @@ class ProductController extends Controller
         //dd($featureProducts);
        // $meidcanProducts = Product::join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.catID')
        // ->where('tbl_product.catID',27)->orderby('productID','DESC')
-       $productSales = Product::take(8)->orderby('productID','DESC')->where('type',2)->get();
+       $productSales = Product::take(8)->where('status',1)->orderby('productID','DESC')->where('type',2)->get();
 
-       $productBelow3tr = Product::take(8)->orderby('productID','DESC')->where('catID',16)->get();
-       $product3trTo5tr = Product::take(8)->orderby('productID','DESC')->where('catID',15)->get();
-       $product5trTo7tr = Product::take(8)->orderby('productID','DESC')->where('catID',17)->get();
-       $product7trTo10tr = Product::take(8)->orderby('productID','DESC')->where('catID',18)->get();
-       $productOver10tr = Product::take(8)->orderby('productID','DESC')->where('catID',19)->get();
+       $productBelow3tr = Product::take(8)->where('status',1)->where('type','!=' ,2)->orderby('productID','DESC')->where('catID',16)->get();
+       $product3trTo5tr = Product::take(8)->where('status',1)->where('type','!=' ,2)->orderby('productID','DESC')->where('catID',15)->get();
+       $product5trTo7tr = Product::take(8)->where('status',1)->where('type','!=' ,2)->orderby('productID','DESC')->where('catID',17)->get();
+       $product7trTo10tr = Product::take(8)->where('status',1)->where('type','!=' ,2)->orderby('productID','DESC')->where('catID',18)->get();
+       $productOver10tr = Product::take(8)->where('status',1)->where('type','!=' ,2)->orderby('productID','DESC')->where('catID',19)->get();
        // var_dump( $meidcanProducts);
        // exit;
          /*seo*/

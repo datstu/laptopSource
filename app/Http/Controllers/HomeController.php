@@ -91,12 +91,13 @@ class HomeController extends Controller
 
        
         if($id==999){
-            $productCategory = Product::where('status',1)->where('type',1)->paginate(12);
-            $category = 999;
-            return view('pages/product/productCategory')->with(compact('productCategory','category'))->with(compact('meta_desc','meta_keywords','meta_title','url_canonical'));;
+            $productCategory = Product::where('type',2)->where('tbl_product.status',1)->paginate(12);
+          
+            return view('pages/product/productCategory')->with(compact('productCategory'))->with(compact('meta_desc','meta_keywords','meta_title','url_canonical'));;
         } else{
             $productCategory = Product::join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.catID')
             ->where('tbl_product.catID',$id)
+            ->where('tbl_product.status',1)->where('tbl_product.type','!=' ,2)
             ->paginate(12);
 
             $category = CategoryProduct::find($id);
@@ -106,7 +107,8 @@ class HomeController extends Controller
             // exit;
             if( empty($category) || empty($productCategory)) return redirect('/trang-chu');
             return view('pages/product/productCategory')->with(compact('productCategory','category'))->with(compact('meta_desc','meta_keywords','meta_title','url_canonical'));;
-        }
+        } 
+         return redirect('/');
         
       
     }

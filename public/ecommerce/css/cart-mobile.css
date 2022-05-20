@@ -315,7 +315,7 @@ color: red;
         float: left;
         min-height: 115px;
     }
-     .cart_desktop, .back-to-top{
+     .cart_desktop{
         display: none !important;
     }
     #cart_page {

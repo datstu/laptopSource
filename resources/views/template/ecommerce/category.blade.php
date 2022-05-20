@@ -5,10 +5,10 @@ $category = Helper::getListCategory();
 
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="{{URL::to('/san-pham-theo-danh-muc-xa-hang')}}"><i class="fa fa-home"></i>Tất Cả </a>
+                <a class="nav-link" href="{{URL::to('/danh-sach-san-pham')}}"><i class="fa fa-home"></i>Tất Cả </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-tshirt"></i>Xả hàng || Giảm giá </a>
+                <a class="nav-link" href="{{URL::to('/san-pham-theo-danh-muc-999')}}"><i class="fa fa-tshirt"></i>Xả hàng || Giảm giá </a>
             </li>
             {{-- <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fa fa-shopping-bag"></i>Dưỡng Da</a>

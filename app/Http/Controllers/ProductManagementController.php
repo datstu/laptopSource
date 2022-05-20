@@ -51,8 +51,12 @@ class ProductManagementController extends Controller
            $product->catID = empty($data['category'])?0:$data['category'];
            $product->brandID =empty($data['brand'])?0:$data['brand']; 
            $product->product_desc = empty($data['descProduct'])?'':$data['descProduct'];
-           $product->price = $data['price'];
-           $product->price_old = empty($data['priceOld'])?'':$data['priceOld'];
+           //$product->price = $data['price'];
+
+           $product->price = preg_replace("/[^0-9.]/", "", $data['price']);
+          
+        //    $product->price_old = empty($data['priceOld'])?'':$data['priceOld'];
+        $product->price_old = empty($data['priceOld'])?'':preg_replace("/[^0-9.]/", "", $data['priceOld']);
            $product->meta_keyswords = $data['meta_keywords'];
            
            $product->moTaNgan = $data['sortDescProduct'];
@@ -97,8 +101,12 @@ class ProductManagementController extends Controller
            $product->catID = empty($data['category'])?0:$data['category'];
            $product->brandID = empty($data['brand'])?0:$data['brand']; 
            $product->product_desc = empty($data['descProduct'])?'':$data['descProduct'];
-           $product->price = $data['price'];
-           $product->price_old = empty($data['priceOld'])?'':$data['priceOld'];
+       //$product->price = $data['price'];
+
+       $product->price = preg_replace("/[^0-9.]/", "", $data['price']);
+          
+       //    $product->price_old = empty($data['priceOld'])?'':$data['priceOld'];
+       $product->price_old = empty($data['priceOld'])?'':preg_replace("/[^0-9.]/", "", $data['priceOld']);
            $product->moTaNgan = $data['sortDescProduct'];
            $product->status = $data['statusProduct'];
            $product->type = $data['typeProduct'];

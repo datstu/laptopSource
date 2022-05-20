@@ -1,5 +1,10 @@
 @include('template.ecommerce.header')
 <style>
+    @media only screen and (max-width: 426px){
+    .bottom-bar {
+        padding: 0;
+    margin-bottom: 30px;
+}}
  .cart-btn-lea button, .cart-btn-lea a{
     right: 0;
     position: absolute;
@@ -160,7 +165,7 @@
                     </div>
                     <div class="cart-btn-lea">
                         
-                        <a href="{{URL::to('/checkout')}}" class="place_order" style="right: 0;
+                        <a href="{{URL::to('/')}}" class="place_order" style="right: 0;
                         position: absolute;padding: 10px; margin: -28px 200px;">Tiến hành đặt hàng</a>
                     </div>
                 </div>
@@ -253,7 +258,7 @@
             <div class="clearfix"></div>
             
     <div class="nav_bottom_detail material-ripple">
-        <a href="{{URL::to('/checkout')}}" class="btn btn_site_3">Tiến hành đặt hàng</a>
+        <a href="{{URL::to('/')}}" class="btn btn_site_3">Tiến hành đặt hàng</a>
     </div></div>
     {{-- end cart mobile --}}
    
